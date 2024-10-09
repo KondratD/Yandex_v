@@ -10,5 +10,5 @@ def post_new_order(body):
 response = post_new_order(data.order_body)
 track_number = str(response.json()["track"])
 
-def get_info_order(track_number):
+def get_info_order():
     return requests.get(configuration.URL_SERVICE + configuration.INFO_ORDER + track_number)
