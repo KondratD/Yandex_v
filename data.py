@@ -1,9 +1,11 @@
 from faker import Faker
+
 fake = Faker()
 
 headers = {
     "Content-Type": "application/json"
 }
+
 order_body = {
     "firstName": fake.first_name(),
     "lastName": "Фамилия",
