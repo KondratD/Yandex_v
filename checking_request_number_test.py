@@ -2,6 +2,9 @@
 
 import sender_stand_request
 
+
 def test_get_order_by_track_success():
-    order_response = sender_stand_request.get_info_order()
-    assert order_response.status_code == 200
+    response = post_new_order(data.order_body)
+    track_number = str(response.json()["track"])
+    order_info_response = get_info_order(track_number)
+    assert order_info_response.status_code == 200
